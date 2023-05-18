@@ -76,7 +76,7 @@ import {
   PluginRepo__factory,
   PluginSetupProcessor__factory,
   TokenVoting__factory,
-} from "@aragon/osx-ethers";
+} from "@mixinao/osx-ethers";
 import { toUtf8Bytes } from "@ethersproject/strings";
 import {
   EMPTY_PROPOSAL_METADATA_LINK,

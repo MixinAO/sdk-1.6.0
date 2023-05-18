@@ -1,6 +1,13 @@
-import { activeContractsList } from "@aragon/osx-ethers";
+import { activeContractsList } from "@mixinao/osx-ethers";
 import { NetworkDeployment, SupportedNetworks } from "./interfaces/common";
 import { ProposalMetadata } from "./interfaces/plugin";
+import { JsonRpcProvider } from "@ethersproject/providers";
+
+export const MVMProvider = new JsonRpcProvider('https://geth.mvm.dev', {
+  chainId: 73927,
+  name: 'mvm',
+  ensAddress: '0xB269b926d06186dA332DED7d9229becfdbDA6b72',
+})
 
 export const UNSUPPORTED_PROPOSAL_METADATA_LINK: ProposalMetadata = {
   title: "(unsupported metadata link)",
@@ -22,12 +29,14 @@ export const UNAVAILABLE_PROPOSAL_METADATA: ProposalMetadata = {
 };
 
 const getGraphqlNode = (netowrk: SupportedNetworks): string => {
-  return `https://subgraph.satsuma-prod.com/${
+  return netowrk === 'mvm' 
+  ? "https://graph.mvg.finance/subgraphs/name/osx-mainnet/graphql"
+  : `https://subgraph.satsuma-prod.com/${
     process.env.SATSUMA_API_KEY || "qHR2wGfc5RLi6"
   }/aragon/osx-${SupportedNetworksToGraphqlNetworks[netowrk]}/api`;
 };
 
-type GraphqlNetworks = "mainnet" | "goerli" | "polygon" | "mumbai";
+type GraphqlNetworks = "mainnet" | "goerli" | "polygon" | "mumbai" | 'mvm';
 
 const SupportedNetworksToGraphqlNetworks: {
   [K in SupportedNetworks]: GraphqlNetworks;
@@ -36,6 +45,7 @@ const SupportedNetworksToGraphqlNetworks: {
   goerli: "goerli",
   matic: "polygon",
   maticmum: "mumbai",
+  mvm: "mvm",
 };
 
 export const GRAPHQL_NODES: { [K in SupportedNetworks]: { url: string }[] } = {
@@ -43,6 +53,7 @@ export const GRAPHQL_NODES: { [K in SupportedNetworks]: { url: string }[] } = {
   goerli: [{ url: getGraphqlNode("goerli") }],
   matic: [{ url: getGraphqlNode("matic") }],
   maticmum: [{ url: getGraphqlNode("maticmum") }],
+  mvm: [{ url: getGraphqlNode("mvm") }],
 };
 
 const IPFS_ENDPOINTS = {
@@ -83,6 +94,7 @@ export const IPFS_NODES: {
   goerli: IPFS_ENDPOINTS.test,
   matic: IPFS_ENDPOINTS.prod,
   maticmum: IPFS_ENDPOINTS.test,
+  mvm: IPFS_ENDPOINTS.test,
 };
 
 export const LIVE_CONTRACTS: { [K in SupportedNetworks]: NetworkDeployment } = {
@@ -139,5 +151,19 @@ export const LIVE_CONTRACTS: { [K in SupportedNetworks]: NetworkDeployment } = {
     addresslistVotingSetup: activeContractsList.polygon.AddresslistVotingSetup,
     tokenVotingSetup: activeContractsList.polygon.TokenVotingSetup,
     ensRegistry: activeContractsList.polygon.ENSRegistry,
+  },
+  mvm: {
+    daoFactory: activeContractsList.mvm.DAOFactory,
+    pluginSetupProcessor: activeContractsList.mvm.PluginSetupProcessor,
+    multisigRepo: activeContractsList.mvm["multisig-repo"],
+    adminRepo: activeContractsList.mvm["admin-repo"],
+    addresslistVotingRepo:
+      activeContractsList.mvm["address-list-voting-repo"],
+    tokenVotingRepo: activeContractsList.mvm["token-voting-repo"],
+    multisigSetup: activeContractsList.mvm.MultisigSetup,
+    adminSetup: activeContractsList.mvm.AdminSetup,
+    addresslistVotingSetup: activeContractsList.mvm.AddresslistVotingSetup,
+    tokenVotingSetup: activeContractsList.mvm.TokenVotingSetup,
+    ensRegistry: activeContractsList.mvm.ENSRegistry,
   },
 };

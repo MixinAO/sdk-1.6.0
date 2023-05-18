@@ -66,7 +66,7 @@ import {
   AddresslistVoting__factory,
   PluginRepo__factory,
   PluginSetupProcessor__factory,
-} from "@aragon/osx-ethers";
+} from "@mixinao/osx-ethers";
 import { toUtf8Bytes } from "@ethersproject/strings";
 import {
   EMPTY_PROPOSAL_METADATA_LINK,

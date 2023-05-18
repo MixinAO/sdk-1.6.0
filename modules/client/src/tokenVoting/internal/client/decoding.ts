@@ -8,7 +8,7 @@ import {
 } from "../../../client-common";
 import { AVAILABLE_FUNCTION_SIGNATURES } from "../constants";
 import { IMintTokenParams, ITokenVotingClientDecoding } from "../../interfaces";
-import { IERC20MintableUpgradeable__factory } from "@aragon/osx-ethers";
+import { IERC20MintableUpgradeable__factory } from "@mixinao/osx-ethers";
 import { mintTokenParamsFromContract } from "../utils";
 
 /**

@@ -1,4 +1,4 @@
-import { TokenVoting__factory } from "@aragon/osx-ethers";
+import { TokenVoting__factory } from "@mixinao/osx-ethers";
 import {
   ClientCore,
   GasFeeEstimation,

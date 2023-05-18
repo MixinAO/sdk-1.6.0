@@ -11,7 +11,7 @@ import {
 } from "../../interfaces";
 // @ts-ignore
 // todo fix new contracts-ethers
-import { Multisig__factory } from "@aragon/osx-ethers";
+import { Multisig__factory } from "@mixinao/osx-ethers";
 
 /**
  * Decoding module for the SDK AddressList Client

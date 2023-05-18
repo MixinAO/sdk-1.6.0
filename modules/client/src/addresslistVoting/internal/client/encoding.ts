@@ -18,7 +18,7 @@ import {
   IAddresslistVotingClientEncoding,
   IAddresslistVotingPluginInstall,
 } from "../../interfaces";
-import { AddresslistVoting__factory } from "@aragon/osx-ethers";
+import { AddresslistVoting__factory } from "@mixinao/osx-ethers";
 import { defaultAbiCoder } from "@ethersproject/abi";
 import { LIVE_CONTRACTS } from "../../../client-common/constants";
 import { getNetwork, Networkish } from "@ethersproject/providers";

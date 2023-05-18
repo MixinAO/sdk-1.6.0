@@ -1,4 +1,4 @@
-import { Multisig__factory } from "@aragon/osx-ethers";
+import { Multisig__factory } from "@mixinao/osx-ethers";
 import {
   boolArrayToBitmap,
   decodeProposalId,

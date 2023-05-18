@@ -6,7 +6,7 @@ import "../../mocks/aragon-sdk-ipfs";
 import {
   DAO__factory,
   PluginSetupProcessor__factory,
-} from "@aragon/osx-ethers";
+} from "@mixinao/osx-ethers";
 
 import {
   ApplyInstallationParams,

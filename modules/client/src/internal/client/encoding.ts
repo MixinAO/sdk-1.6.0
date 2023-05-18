@@ -21,7 +21,7 @@ import { isAddress } from "@ethersproject/address";
 import {
   DAO__factory,
   PluginSetupProcessor__factory,
-} from "@aragon/osx-ethers";
+} from "@mixinao/osx-ethers";
 import {
   applyInstallatonParamsToContract,
   permissionParamsToContract,

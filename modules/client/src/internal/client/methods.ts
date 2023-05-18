@@ -5,7 +5,7 @@ import {
   DAORegistry__factory,
   PluginRepo__factory,
   PluginSetupProcessor__factory,
-} from "@aragon/osx-ethers";
+} from "@mixinao/osx-ethers";
 import {
   AmountMismatchError,
   FailedDepositError,
@@ -99,6 +99,7 @@ import {
   UNSUPPORTED_DAO_METADATA_LINK,
   UNSUPPORTED_RELEASE_METADATA_LINK,
 } from "../constants";
+import { MVMProvider } from "../../client-common/constants";
 
 /**
  * Methods module the SDK Generic Client
@@ -416,7 +417,7 @@ export class ClientMethods extends ClientCore implements IClientMethods {
     let address = daoAddressOrEns;
     if (!isAddress(address)) {
       await this.web3.ensureOnline();
-      const provider = this.web3.getProvider();
+      const provider = MVMProvider;   //this.web3.getProvider();
       if (!provider) {
         throw new NoProviderError();
       }
@@ -532,7 +533,7 @@ export class ClientMethods extends ClientCore implements IClientMethods {
     if (address) {
       if (!isAddress(address)) {
         await this.web3.ensureOnline();
-        const provider = this.web3.getProvider();
+        const provider = MVMProvider;   //this.web3.getProvider();
         if (!provider) {
           throw new NoProviderError();
         }
@@ -595,7 +596,7 @@ export class ClientMethods extends ClientCore implements IClientMethods {
     if (address) {
       if (!isAddress(address)) {
         await this.web3.ensureOnline();
-        const provider = this.web3.getProvider();
+        const provider = MVMProvider;   //this.web3.getProvider();
         if (!provider) {
           throw new NoProviderError();
         }

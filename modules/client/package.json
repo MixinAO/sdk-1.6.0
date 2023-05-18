@@ -1,6 +1,6 @@
 {
-  "name": "@aragon/sdk-client",
-  "author": "Aragon Association",
+  "name": "@mixinao/sdk-client",
+  "author": "Zed Wong",
   "version": "1.6.0",
   "license": "MIT",
   "main": "dist/index.js",
@@ -60,7 +60,7 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "@aragon/osx-ethers": "^1.2.1",
+    "@mixinao/osx-ethers": "^1.2.3",
     "@aragon/sdk-common": "^1.2.0",
     "@aragon/sdk-ipfs": "^1.1.0",
     "@ethersproject/abstract-signer": "^5.5.0",

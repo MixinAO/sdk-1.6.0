@@ -3,7 +3,7 @@ import {
   DAOFactory,
   DAOFactory__factory,
   PluginRepo__factory,
-} from "@aragon/osx-ethers";
+} from "@mixinao/osx-ethers";
 import {
   InvalidAddressOrEnsError,
   NoProviderError,

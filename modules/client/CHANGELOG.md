@@ -69,7 +69,7 @@ TEMPLATE:
 - Add support for polygon.
 
 ### Changed
-- Updates `@aragon/osx-ethers` to v1.2.1.
+- Updates `@mixinao/osx-ethers` to v1.2.1.
 - Reverts the encoding of `addAddresses` and `removeAddresses` in the multisig plugin to return only one action
 
 ## [1.2.0]
@@ -77,7 +77,7 @@ TEMPLATE:
 - Add support for mumbai.
 
 ### Changed
-- Updates `@aragon/osx-ethers` to v1.2.0.
+- Updates `@mixinao/osx-ethers` to v1.2.0.
 
 ## [1.1.0]
 ### Added

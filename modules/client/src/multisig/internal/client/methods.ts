@@ -60,7 +60,7 @@ import {
   Multisig__factory,
   PluginRepo__factory,
   PluginSetupProcessor__factory,
-} from "@aragon/osx-ethers";
+} from "@mixinao/osx-ethers";
 import {
   QueryMultisigProposal,
   QueryMultisigProposals,

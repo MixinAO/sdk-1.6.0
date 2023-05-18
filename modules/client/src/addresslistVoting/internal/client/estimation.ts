@@ -1,4 +1,4 @@
-import { AddresslistVoting__factory } from "@aragon/osx-ethers";
+import { AddresslistVoting__factory } from "@mixinao/osx-ethers";
 import {
   ClientCore,
   GasFeeEstimation,

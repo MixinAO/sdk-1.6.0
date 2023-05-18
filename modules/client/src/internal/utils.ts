@@ -38,7 +38,7 @@ import { defaultAbiCoder, Result } from "@ethersproject/abi";
 import { keccak256 } from "@ethersproject/keccak256";
 import { toUtf8Bytes } from "@ethersproject/strings";
 import { AddressZero } from "@ethersproject/constants";
-import { PluginSetupProcessor } from "@aragon/osx-ethers";
+import { PluginSetupProcessor } from "@mixinao/osx-ethers";
 import {
   ApplyInstallationParams,
   DecodedApplyInstallationParams,

@@ -79,7 +79,7 @@ import { deployErc20 } from "../../helpers/deploy-erc20";
 import {
   GovernanceWrappedERC20__factory,
   TokenVoting__factory,
-} from "@aragon/osx-ethers";
+} from "@mixinao/osx-ethers";
 import { BigNumber } from "@ethersproject/bignumber";
 
 jest.spyOn(SupportedNetworksArray, "includes").mockReturnValue(true);
