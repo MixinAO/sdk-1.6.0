@@ -248,6 +248,14 @@ export class Context {
     networkish: Networkish,
     ensRegistryAddress?: string,
   ): Network {
+    if (networkish === 'mvm') {
+      return {
+        name: 'mvm',
+        chainId: 73927,
+        ensAddress: '0xB269b926d06186dA332DED7d9229becfdbDA6b72',
+        _defaultProvider: undefined,
+      };
+    }
     const network = getNetwork(networkish);
     const networkName = network.name as SupportedNetworks;
     if (!SupportedNetworksArray.includes(networkName)) {
