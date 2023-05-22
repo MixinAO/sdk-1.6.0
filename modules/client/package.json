@@ -1,7 +1,7 @@
 {
   "name": "@mixinao/sdk-client",
   "author": "Zed Wong",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/sdk-client.esm.js",

@@ -103,10 +103,10 @@ export class Web3Module implements IClientWeb3Core {
     return this.getConnectedSigner()
       .getFeeData()
       .then((feeData) => {
-        if (!feeData.maxFeePerGas) {
+        if (!feeData.gasPrice) {
           throw new CannotEstimateGasError();
         }
-        return feeData.maxFeePerGas.toBigInt();
+        return feeData.gasPrice.toBigInt();
       });
   }
 
